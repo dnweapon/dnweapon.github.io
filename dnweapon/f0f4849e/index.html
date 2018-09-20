@@ -26,6 +26,13 @@
 
 
 
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
 
 
 
@@ -82,7 +89,7 @@
     root: '/',
     scheme: 'Gemini',
     version: '6.4.1',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -108,7 +115,7 @@
 <meta name="keywords" content="IE8">
 <meta property="og:type" content="article">
 <meta property="og:title" content="IE8兼容问题">
-<meta property="og:url" content="http://yoursite.com/dnweapon/f0f4849e/index.html">
+<meta property="og:url" content="http://amoyit.top/dnweapon/f0f4849e/index.html">
 <meta property="og:site_name" content="dnweapon blog">
 <meta property="og:description" content="js时间函数显示NaN解决方案出现问题: new Date(时间字符串)得到的数据是NaN。解决方案: 调用如下函数来获取时间。调用方式parseISO8601(时间字符串)返回的是日期对象。123456789101112131415function parseISO8601(dateStringInRange) &amp;#123;    var isoExp = /^\s*(\d&amp;#123;4&amp;#12">
 <meta property="og:locale" content="default">
@@ -124,7 +131,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/dnweapon/f0f4849e/"/>
+  <link rel="canonical" href="http://amoyit.top/dnweapon/f0f4849e/"/>
 
 
 
@@ -338,7 +345,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/dnweapon/f0f4849e/">
+    <link itemprop="mainEntityOfPage" href="http://amoyit.top/dnweapon/f0f4849e/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="dnweapon">
@@ -504,7 +511,7 @@
     <strong>Post author:  </strong>dnweapon</li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="http://yoursite.com/dnweapon/f0f4849e/" title="IE8兼容问题">http://yoursite.com/dnweapon/f0f4849e/</a>
+    <a href="http://amoyit.top/dnweapon/f0f4849e/" title="IE8兼容问题">http://amoyit.top/dnweapon/f0f4849e/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> unless stating additionally.</li>
@@ -517,7 +524,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/IE8/" rel="tag"># IE8</a>
+            <a href="/tags/IE8/" rel="tag"><i class="fa fa-tag"></i> IE8</a>
           
         </div>
       
@@ -778,7 +785,7 @@
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-bolt"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">dnweapon</span>
 
@@ -821,6 +828,15 @@
 
 
 
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=66024606";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
 
 
 
@@ -831,6 +847,8 @@
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     
@@ -1294,6 +1312,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 
@@ -1309,6 +1342,72 @@
   
 
   
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('Copy')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
 
 </body>
 </html>
