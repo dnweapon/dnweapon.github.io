@@ -1,5 +1,10 @@
 ---
-abbrlink: '0'
+title: Github Pages + Hexo 搭建博客
+tags:
+  - GitHub
+  - Hexo
+categories: 博客
+abbrlink: fd0c693c
 ---
 # Github Pages + Hexo 搭建博客
 ## 一、前言
@@ -134,3 +139,39 @@ provide shell access.
 
 5. **相关资料**
 - [Generating SSH keys](https://help.github.com/articles/generating-ssh-keys/)
+
+### Hexo
+1. **安装Hexo**
+
+安装Hexo相当简单。在安装之前，必须检查电脑中是否已经安装下列应用程序：
+- [NodeJs](http://nodejs.org/)
+- [Git](http://git-scm.com/)
+
+如果您的电脑中已经安装上述必备程序，那么恭喜您！接下来只需要使用 npm 即可完成 Hexo 的安装。
+
+```
+npm install -g hexo
+```
+
+2. **使用Hexo建站**
+
+安装完后，在你喜欢的文件夹内（例如D：\Hexo），点击鼠标右键选择Git bash，输入以下指令：
+
+```
+$ hexo init
+```
+该命令会在目标文件夹内建立网站所需要的所有文件。接下来是安装依赖包：
+
+```
+$ npm install
+```
+这样，我们就已经搭建起本地的Hexo博客了。可以先执行以下命令（在对应文件夹下），然后再浏览器输入localhost:4000查看。
+
+```
+$ hexo generate
+$ hexo server
+```
+这个博客只是本地的，别人是浏览不了的，之后需要部署到GitHub上。
+
+3. **相关资料**
+- [Hexo官网文档](https://hexo.io/zh-cn/docs/)
